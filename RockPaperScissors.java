@@ -17,35 +17,42 @@ public class RockPaperScissors {
         Map<String, String> rock = new LinkedHashMap<>();
         Map<String, String> paper = new LinkedHashMap<>();
         Map<String, String> scissors = new LinkedHashMap<>();
-
         loadGameRules(rock, paper, scissors);
 
         do {
-            displayOptions();
+            int[] scorePlayer = new int[10];
+            int[] scoreComputer = new int[10];
 
-            String playerMove = returnPlayerChoice();
+            int gamesCount = 0;
+            do {
+                gamesCount++;
+                displayOptions(gamesCount);
 
-            if (playerMove.equals(EXIT)) {
-                System.out.println("exiting...");
-                return;
-            }
+                String playerMove = returnPlayerChoice(gamesCount);
 
-            System.out.println("You chose \"" + playerMove + "\"!");
+                if (playerMove.equals(EXIT)) {
+                    System.out.println("exiting...");
+                    return;
+                }
 
-            String computerMove = returnComputerChoice();
+                System.out.println("You chose \"" + playerMove + "\"!");
 
-            System.out.printf("The computer chose \"%s\"!%n", computerMove);
+                String computerMove = returnComputerChoice();
 
-            displayResult(playerMove, computerMove, rock, paper, scissors);
-            
+                System.out.printf("The computer chose \"%s\"!%n", computerMove);
+
+                displayResult(playerMove, computerMove, rock, paper, scissors);
+
+            } while (gamesCount < 10);
+
+            //TODO print scores
+
         } while (gameRestart().equalsIgnoreCase("y"));
-
-        //TODO print scores
 
     }
 
     public static String gameRestart() {
-        System.out.print("Continue playing: [y]es or press any key.. -> ");
+        System.out.print("Play another round? : [y]es or press any key.. -> ");
         return new Scanner(System.in).nextLine();
 
     }
@@ -66,12 +73,12 @@ public class RockPaperScissors {
 
     }
 
-    public static String returnPlayerChoice() {
+    public static String returnPlayerChoice(int gameCounter) {
         String playerMove = returnHumanChoice();
         while (playerMove.equals(INVALID)) {
 
             System.out.println(playerMove + "\n");
-            displayOptions();
+            displayOptions(gameCounter);
             playerMove = returnHumanChoice();
 
         }
@@ -80,15 +87,19 @@ public class RockPaperScissors {
 
     public static void displayResult(String playerMove, String computerMove, Map<String, String> rock, Map<String, String> paper, Map<String, String> scissors) {
         switch (playerMove) {
-            case ROCK -> System.out.printf("%s%n", rock.get(computerMove.toLowerCase()));
+            case ROCK -> {
+                int wdqw = 0;
+
+                System.out.printf("%s%n", rock.get(computerMove.toLowerCase()));
+            }
             case PAPER -> System.out.printf("%s%n", paper.get(computerMove.toLowerCase()));
             case SCISSORS -> System.out.printf("%s%n", scissors.get(computerMove.toLowerCase()));
         }
     }
 
-    public static void displayOptions() {
+    public static void displayOptions(int gameCounter) {
 
-        System.out.print("Choose [r]ock, [p]aper, [s]cissors, [e]xit: ");
+        System.out.printf("Game %d of 10. Choose [r]ock, [p]aper, [s]cissors, [e]xit: ", gameCounter);
         // System.out.print("Your choice -> ");
     }
 
