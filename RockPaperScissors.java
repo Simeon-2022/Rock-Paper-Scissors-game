@@ -1,7 +1,4 @@
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.Random;
-import java.util.Scanner;
+import java.util.*;
 
 public class RockPaperScissors {
 
@@ -20,8 +17,8 @@ public class RockPaperScissors {
         loadGameRules(rock, paper, scissors);
 
         do {
-            int[] scorePlayer = new int[10];
-            int[] scoreComputer = new int[10];
+            List<Integer> scorePlayer = new ArrayList<>();
+            List<Integer> scoreComputer = new ArrayList<>();
 
             int gamesCount = 0;
             do {
@@ -41,7 +38,7 @@ public class RockPaperScissors {
 
                 System.out.printf("The computer chose \"%s\"!%n", computerMove);
 
-                displayResult(playerMove, computerMove, rock, paper, scissors);
+                displayResult(playerMove, computerMove, rock, paper, scissors, scorePlayer, scoreComputer);
 
             } while (gamesCount < 10);
 
@@ -85,15 +82,29 @@ public class RockPaperScissors {
         return playerMove;
     }
 
-    public static void displayResult(String playerMove, String computerMove, Map<String, String> rock, Map<String, String> paper, Map<String, String> scissors) {
+    public static void displayResult(String playerMove, String computerMove, Map<String, String> rock, Map<String, String> paper, Map<String, String> scissors, int[] player1, int[] computer) {
+        String result = "";
         switch (playerMove) {
             case ROCK -> {
-                int wdqw = 0;
-
-                System.out.printf("%s%n", rock.get(computerMove.toLowerCase()));
+                result = rock.get(computerMove.toLowerCase());
+                System.out.println(result);
             }
-            case PAPER -> System.out.printf("%s%n", paper.get(computerMove.toLowerCase()));
-            case SCISSORS -> System.out.printf("%s%n", scissors.get(computerMove.toLowerCase()));
+            case PAPER -> {
+                result = paper.get(computerMove.toLowerCase());
+                System.out.println(result);
+            }
+            case SCISSORS -> {
+                result = scissors.get(computerMove.toLowerCase());
+                System.out.println(result);
+            }
+        }
+
+        if (result.equals("You win :)")) {
+        pl
+        } else if (result.equals("You lose :(")) {
+
+        } else {
+
         }
     }
 
