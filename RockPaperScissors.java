@@ -19,10 +19,13 @@ public class RockPaperScissors {
         do {
             List<Integer> scorePlayer = new ArrayList<>();
             List<Integer> scoreComputer = new ArrayList<>();
+            System.out.print("Enter your name: ");
+            String namePlayer = new Scanner(System.in).nextLine();
 
             int gamesCount = 0;
             do {
                 gamesCount++;
+
                 displayOptions(gamesCount);
 
                 String playerMove = returnPlayerChoice(gamesCount);
@@ -43,8 +46,34 @@ public class RockPaperScissors {
             } while (gamesCount < 10);
 
             //TODO print scores
-
+            printFinalScore(gamesCount, namePlayer, scorePlayer, scoreComputer);
         } while (gameRestart().equalsIgnoreCase("y"));
+
+    }
+
+    public static void printFinalScore(int gameCounter, String namePlayer, List<Integer> scorePlayer1, List<Integer> scoreComputer) {
+
+        if (namePlayer.isEmpty()) {
+            namePlayer = "Player_1";
+        }
+        System.out.println("\nRound results:");
+
+        String lines = "_".repeat(("|" + namePlayer + " v|s Computer|").length());
+
+        System.out.printf("%s%n", lines);
+        System.out.printf("|%s v|s Computer|%n",namePlayer);
+        System.out.printf("%s%n", lines);
+        int nameLength = namePlayer.length();
+        String spaces = " ".repeat(nameLength - ("#_").length());
+
+        for (int i = 1; i <= gameCounter; i++) {
+            if (i == 10) {
+                spaces = " ".repeat(nameLength - ("#_").length() - 1);
+            }
+            System.out.println("#_" + i + spaces + scorePlayer1.get(i - 1) + "<|>" + scoreComputer.get(i - 1));
+            System.out.printf("%s%n", lines);
+        }
+        System.out.printf("Totals:  %d<|>%d%n",scorePlayer1.stream().mapToInt(Integer::intValue).sum(), scoreComputer.stream().mapToInt(i->Integer.parseInt(String.valueOf(i))).sum());
 
     }
 
@@ -82,7 +111,9 @@ public class RockPaperScissors {
         return playerMove;
     }
 
-    public static void displayResult(String playerMove, String computerMove, Map<String, String> rock, Map<String, String> paper, Map<String, String> scissors, int[] player1, int[] computer) {
+    public static void displayResult(String playerMove, String computerMove, Map<String,
+            String> rock, Map<String, String> paper, Map<String, String> scissors,
+                                     List<Integer> player1, List<Integer> computer) {
         String result = "";
         switch (playerMove) {
             case ROCK -> {
@@ -100,17 +131,21 @@ public class RockPaperScissors {
         }
 
         if (result.equals("You win :)")) {
-        pl
+            player1.add(1);
+            computer.add(0);
         } else if (result.equals("You lose :(")) {
-
+            player1.add(0);
+            computer.add(1);
         } else {
-
+            player1.add(0);
+            computer.add(0);
         }
     }
 
+
     public static void displayOptions(int gameCounter) {
 
-        System.out.printf("Game %d of 10. Choose [r]ock, [p]aper, [s]cissors, [e]xit: ", gameCounter);
+        System.out.printf("%nGame %d of 10. Choose [r]ock, [p]aper, [s]cissors, [e]xit: ", gameCounter);
         // System.out.print("Your choice -> ");
     }
 
