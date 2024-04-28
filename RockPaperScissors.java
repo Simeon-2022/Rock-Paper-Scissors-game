@@ -73,8 +73,21 @@ public class RockPaperScissors {
             System.out.println("#_" + i + spaces + scorePlayer1.get(i - 1) + "<|>" + scoreComputer.get(i - 1));
             System.out.printf("%s%n", lines);
         }
-        System.out.printf("Totals:  %d<|>%d%n",scorePlayer1.stream().mapToInt(Integer::intValue).sum(), scoreComputer.stream().mapToInt(i->Integer.parseInt(String.valueOf(i))).sum());
 
+        int totalScorePlayer = scorePlayer1.stream().mapToInt(Integer::intValue).sum();
+        int totalScoreComputer = scoreComputer.stream().mapToInt(i->Integer.parseInt(String.valueOf(i))).sum();
+
+        if (totalScorePlayer > totalScoreComputer) {
+            System.out.printf("%s won with %d!%n", namePlayer, totalScorePlayer);
+            System.out.printf("%s lost with %d!%n", "Computer", totalScoreComputer);
+
+        } else if (totalScorePlayer < totalScoreComputer) {
+            System.out.printf("%s won with [%s] points!%n", "Computer",totalScoreComputer);
+            System.out.printf("%s lost with [%s] points!%n", namePlayer, totalScorePlayer);
+
+        } else {
+            System.out.println("This round is a draw! This calls for a rematch!");
+        }
     }
 
     public static String gameRestart() {
@@ -103,7 +116,7 @@ public class RockPaperScissors {
         String playerMove = returnHumanChoice();
         while (playerMove.equals(INVALID)) {
 
-            System.out.println(playerMove + "\n");
+            System.out.print(playerMove + "\n");
             displayOptions(gameCounter);
             playerMove = returnHumanChoice();
 
@@ -146,7 +159,6 @@ public class RockPaperScissors {
     public static void displayOptions(int gameCounter) {
 
         System.out.printf("%nGame %d of 10. Choose [r]ock, [p]aper, [s]cissors, [e]xit: ", gameCounter);
-        // System.out.print("Your choice -> ");
     }
 
     public static String returnComputerChoice() {
