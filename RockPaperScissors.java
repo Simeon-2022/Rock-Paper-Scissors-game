@@ -61,7 +61,7 @@ public class RockPaperScissors {
         String lines = "_".repeat(("|" + namePlayer + " v|s Computer|").length());
 
         System.out.printf("%s%n", lines);
-        System.out.printf("|%s v|s Computer|%n",namePlayer);
+        System.out.printf("|%s v|s Computer|%n", namePlayer);
         System.out.printf("%s%n", lines);
         int nameLength = namePlayer.length();
         String spaces = " ".repeat(nameLength - ("#_").length());
@@ -75,14 +75,14 @@ public class RockPaperScissors {
         }
 
         int totalScorePlayer = scorePlayer1.stream().mapToInt(Integer::intValue).sum();
-        int totalScoreComputer = scoreComputer.stream().mapToInt(i->Integer.parseInt(String.valueOf(i))).sum();
+        int totalScoreComputer = scoreComputer.stream().mapToInt(i -> Integer.parseInt(String.valueOf(i))).sum();
 
         if (totalScorePlayer > totalScoreComputer) {
             System.out.printf("%s won with %d!%n", namePlayer, totalScorePlayer);
             System.out.printf("%s lost with %d!%n", "Computer", totalScoreComputer);
 
         } else if (totalScorePlayer < totalScoreComputer) {
-            System.out.printf("%s won with [%s] points!%n", "Computer",totalScoreComputer);
+            System.out.printf("%s won with [%s] points!%n", "Computer", totalScoreComputer);
             System.out.printf("%s lost with [%s] points!%n", namePlayer, totalScorePlayer);
 
         } else {
@@ -158,7 +158,9 @@ public class RockPaperScissors {
 
     public static void displayOptions(int gameCounter) {
 
-        System.out.printf("%nGame %d of 10. Choose [r]ock, [p]aper, [s]cissors, [e]xit: ", gameCounter);
+        System.out.printf("%s%n", "-".repeat(("%nGame %d of 10. Choose [r]ock, [p]aper, [s]cissors, [e]xit: ").length()));
+
+        System.out.printf("Game %d of 10. Choose [r]ock, [p]aper, [s]cissors, [e]xit: ", gameCounter);
     }
 
     public static String returnComputerChoice() {
