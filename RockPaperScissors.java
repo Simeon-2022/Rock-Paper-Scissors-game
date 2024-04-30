@@ -45,10 +45,11 @@ public class RockPaperScissors {
 
             } while (gamesCount < 10);
 
-            //TODO print scores
             printFinalScore(gamesCount, namePlayer, scorePlayer, scoreComputer);
-        } while (gameRestart().equalsIgnoreCase("y"));
 
+        } while (gameRestart().equalsIgnoreCase("y"));
+        // TODO try hasNext
+        //new Scanner(System.in).hasNext();
     }
 
     public static void printFinalScore(int gameCounter, String namePlayer, List<Integer> scorePlayer1, List<Integer> scoreComputer) {
@@ -58,12 +59,20 @@ public class RockPaperScissors {
         }
         System.out.println("\nRound results:");
 
+
+        int nameLength = namePlayer.length();
+
+        if (nameLength < " Computer".length()) {
+            namePlayer += " ".repeat("Computer".length() - nameLength);
+        }
+
         String lines = "_".repeat(("|" + namePlayer + " v|s Computer|").length());
 
         System.out.printf("%s%n", lines);
+
+        nameLength = namePlayer.length();
         System.out.printf("|%s v|s Computer|%n", namePlayer);
         System.out.printf("%s%n", lines);
-        int nameLength = namePlayer.length();
         String spaces = " ".repeat(nameLength - ("#_").length());
 
         for (int i = 1; i <= gameCounter; i++) {
@@ -78,11 +87,11 @@ public class RockPaperScissors {
         int totalScoreComputer = scoreComputer.stream().mapToInt(i -> Integer.parseInt(String.valueOf(i))).sum();
 
         if (totalScorePlayer > totalScoreComputer) {
-            System.out.printf("%s won with %d!%n", namePlayer, totalScorePlayer);
-            System.out.printf("%s lost with %d!%n", "Computer", totalScoreComputer);
+            System.out.printf("%s  won with %c%s%c points!%n", namePlayer, '[', totalScorePlayer, ']');
+            System.out.printf("%s lost with [%s] points!%n", "Computer", totalScoreComputer);
 
         } else if (totalScorePlayer < totalScoreComputer) {
-            System.out.printf("%s won with [%s] points!%n", "Computer", totalScoreComputer);
+            System.out.printf("%s  won with %c%s%c points!%n", "Computer", '[', totalScoreComputer, ']');
             System.out.printf("%s lost with [%s] points!%n", namePlayer, totalScorePlayer);
 
         } else {
@@ -153,8 +162,8 @@ public class RockPaperScissors {
             player1.add(0);
             computer.add(0);
         }
-    }
 
+    }
 
     public static void displayOptions(int gameCounter) {
 
