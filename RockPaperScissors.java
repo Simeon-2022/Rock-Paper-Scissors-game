@@ -87,12 +87,12 @@ public class RockPaperScissors {
         int totalScoreComputer = scoreComputer.stream().mapToInt(i -> Integer.parseInt(String.valueOf(i))).sum();
 
         if (totalScorePlayer > totalScoreComputer) {
-            System.out.printf("%s  won with %c%s%c points!%n", namePlayer, '[', totalScorePlayer, ']');
+            System.out.printf("%s won with %c%s%c points!%n", namePlayer.trim(), '[', totalScorePlayer, ']');
             System.out.printf("%s lost with [%s] points!%n", "Computer", totalScoreComputer);
 
         } else if (totalScorePlayer < totalScoreComputer) {
-            System.out.printf("%s  won with %c%s%c points!%n", "Computer", '[', totalScoreComputer, ']');
-            System.out.printf("%s lost with [%s] points!%n", namePlayer, totalScorePlayer);
+            System.out.printf("%s won with %c%s%c points!%n", "Computer", '[', totalScoreComputer, ']');
+            System.out.printf("%s lost with [%s] points!%n", namePlayer.trim(), totalScorePlayer);
 
         } else {
             System.out.println("This round is a draw! This calls for a rematch!");
