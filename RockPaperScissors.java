@@ -19,6 +19,7 @@ public class RockPaperScissors {
         do {
             List<Integer> scorePlayer = new ArrayList<>();
             List<Integer> scoreComputer = new ArrayList<>();
+            welcomeScreen();
             System.out.print("Enter your name: ");
             String namePlayer = new Scanner(System.in).nextLine();
 
@@ -50,6 +51,19 @@ public class RockPaperScissors {
         } while (gameRestart().equalsIgnoreCase("y"));
         // TODO try hasNext
         //new Scanner(System.in).hasNext();
+    }
+
+    public static void welcomeScreen() {
+        System.out.println("---------------------------------------");
+        System.out.println("|---------------Welcome---------------|");
+        System.out.println("|------------------to-----------------|");
+        System.out.println("|---------Rock-Paper-Scissors---------|");
+        System.out.println("---------------------------------------");
+        System.out.println();
+        System.out.println("----------------GAME menu:-------------");
+        System.out.println("|-----Single player -> press [1]------|");
+        System.out.println("|-----Multi player  -> press [2]------|");
+        System.out.println("---------------------------------------");
     }
 
     public static void printFinalScore(int gameCounter, String namePlayer, List<Integer> scorePlayer1, List<Integer> scoreComputer) {
