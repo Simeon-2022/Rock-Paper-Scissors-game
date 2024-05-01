@@ -43,5 +43,5 @@ https://github.com/Simeon-2022/Rock-Paper-Scissors-game/blob/main/RockPaperSciss
 ![image](https://github.com/Simeon-2022/Rock-Paper-Scissors-game/assets/114140968/430896f0-d6d2-4459-a0c9-3eea373d2df9)
 
 one-click live demo
+https://replit.com/@simeonalexandro/RockPaperScissors 
 
-![image](https://github.com/Simeon-2022/Rock-Paper-Scissors-game/assets/114140968/faa6d445-7225-463f-ad5b-d7980cbceb10)
