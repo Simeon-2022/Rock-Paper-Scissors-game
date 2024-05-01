@@ -15,6 +15,7 @@ The project made use of methods called repetitively during the game do-while loo
 
 # Solution
 A set of Map containers sustain all possible game situations:
+
 ![image](https://github.com/Simeon-2022/Rock-Paper-Scissors-game/assets/114140968/66dcb41a-d65d-46d5-a48c-aaecad1bcacd)
 
 Then depending on the player's choice, the outcome is determined based on its association with the map-value-key:
