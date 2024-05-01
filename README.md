@@ -38,7 +38,8 @@ https://github.com/Simeon-2022/Rock-Paper-Scissors-game/blob/main/RockPaperSciss
 ![image](https://github.com/Simeon-2022/Rock-Paper-Scissors-game/assets/114140968/c69788ea-9589-40f5-a8c7-bc5884802d6d)
 
 # Live Demo
-- You can play the game directly in your Web browser here: 
+- You can play the game directly in your Web browser here:
+- https://replit.com/@simeonalexandro/Rock-Paper-Scissors-game#src/main/java/Main.java
 
 ![image](https://github.com/Simeon-2022/Rock-Paper-Scissors-game/assets/114140968/430896f0-d6d2-4459-a0c9-3eea373d2df9)
 
