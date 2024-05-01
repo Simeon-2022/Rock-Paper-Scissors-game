@@ -58,10 +58,11 @@ public class RockPaperScissors {
         System.out.println("|---------Rock-Paper-Scissors---------|");
         System.out.println("---------------------------------------");
         System.out.println();
- /*       System.out.println("----------------GAME menu:-------------");
-        System.out.println("|-----Single player -> press [1]------|");
-        System.out.println("|-----Multi player  -> press [2]------|");
-        System.out.println("---------------------------------------");*/
+        //TODO:
+        // System.out.println("----------------GAME menu:-------------");
+        // System.out.println("|-----Single player -> press [1]------|");
+        // System.out.println("|-----Multi player  -> press [2]------|");
+        // System.out.println("---------------------------------------");
     }
 
     public static void printFinalScore(int gameCounter, String namePlayer, List<Integer> scorePlayer1, List<Integer> scoreComputer) {
