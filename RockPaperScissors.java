@@ -49,8 +49,6 @@ public class RockPaperScissors {
             printFinalScore(gamesCount, namePlayer, scorePlayer, scoreComputer);
 
         } while (gameRestart().equalsIgnoreCase("y"));
-        // TODO try hasNext
-        //new Scanner(System.in).hasNext();
     }
 
     public static void welcomeScreen() {
@@ -60,10 +58,10 @@ public class RockPaperScissors {
         System.out.println("|---------Rock-Paper-Scissors---------|");
         System.out.println("---------------------------------------");
         System.out.println();
-        System.out.println("----------------GAME menu:-------------");
+ /*       System.out.println("----------------GAME menu:-------------");
         System.out.println("|-----Single player -> press [1]------|");
         System.out.println("|-----Multi player  -> press [2]------|");
-        System.out.println("---------------------------------------");
+        System.out.println("---------------------------------------");*/
     }
 
     public static void printFinalScore(int gameCounter, String namePlayer, List<Integer> scorePlayer1, List<Integer> scoreComputer) {
@@ -114,24 +112,25 @@ public class RockPaperScissors {
     }
 
     public static String gameRestart() {
+        System.out.println();
         System.out.print("Play another round? : [y]es or press any key.. -> ");
         return new Scanner(System.in).nextLine();
 
     }
 
     public static void loadGameRules(Map<String, String> rock, Map<String, String> paper, Map<String, String> scissors) {
+
         rock.put("rock", "This game is a draw!");
-        rock.put("paper", "You lose :(");
-        rock.put("scissors", "You win :)");
+        rock.put("paper", "Paper beats rock > You lose :(");
+        rock.put("scissors", "Rock beats scissors > You win :)");
 
         paper.put("paper", "This game is a draw!");
-        paper.put("scissors", "You lose :(");
-        paper.put("rock", "You win :)");
-
+        paper.put("scissors", "Scissors beats paper > You lose :(");
+        paper.put("rock", "Paper beats rock > You win :)");
 
         scissors.put("scissors", "This game is a draw!");
-        scissors.put("rock", "You lose :(");
-        scissors.put("paper", "You win :)");
+        scissors.put("rock", "Rock beats scissors > You lose :(");
+        scissors.put("paper", "Scissors beats paper > You win :)");
 
     }
 
@@ -166,10 +165,10 @@ public class RockPaperScissors {
             }
         }
 
-        if (result.equals("You win :)")) {
+        if (result.endsWith("You win :)")) {
             player1.add(1);
             computer.add(0);
-        } else if (result.equals("You lose :(")) {
+        } else if (result.endsWith("You lose :(")) {
             player1.add(0);
             computer.add(1);
         } else {
