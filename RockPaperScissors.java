@@ -113,7 +113,7 @@ public class RockPaperScissors {
 
     public static String gameRestart() {
         System.out.println();
-        System.out.print("Play another round? : [y]es or press any key.. -> ");
+        System.out.print("Play another round? : [y]es or press Enter for exit.. -> ");
         return new Scanner(System.in).nextLine();
 
     }
