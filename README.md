@@ -3,9 +3,9 @@
 
 Rock - Paper - Scissors is a simple two player game where you and your opponent (the computer) simultaneously choose one of the following three options: "rock", "paper" or "scissors". The rules are as follows:
 
-• Rock beats scissors (the scissors get broken by the rock)
-• Scissors beats paper (the paper gets cut by the scissors)
-• Paper beats rock (the paper covers the rock)
+- Rock beats scissors (the scissors get broken by the rock)
+- Scissors beats paper (the paper gets cut by the scissors)
+- Paper beats rock (the paper covers the rock)
 The winner is the player whose choice beats the choice of his opponent. If both players choose the same option (e.g. "paper"), the game outcome is "draw
 
 ## Project goals
@@ -27,3 +27,11 @@ The project made use of methods called repetitively during the game do-while loo
 
 ## Source code link:
 https://github.com/Simeon-2022/Rock-Paper-Scissors-game/blob/main/RockPaperScissors.java
+
+### Screenshots
+-The User is prompted an input:
+![image](https://github.com/Simeon-2022/Rock-Paper-Scissors-game/assets/114140968/cd6bed8d-eb58-4ef3-a251-827faff56c1b)
+- The final result is printed out and a prompt for another round
+![image](https://github.com/Simeon-2022/Rock-Paper-Scissors-game/assets/114140968/7e7c037e-871a-48e5-9c2b-d6f9785583b7)
+
+
