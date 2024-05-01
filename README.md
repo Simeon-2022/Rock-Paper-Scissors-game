@@ -19,6 +19,7 @@ The project made use of methods called repetitively during the game do-while loo
 ![image](https://github.com/Simeon-2022/Rock-Paper-Scissors-game/assets/114140968/66dcb41a-d65d-46d5-a48c-aaecad1bcacd)
 
 - Depending on the player's choice, the outcome is determined based on its association with the map-value-key:
+  
 ![image](https://github.com/Simeon-2022/Rock-Paper-Scissors-game/assets/114140968/e064978c-4f0a-4528-bd99-11824028ff82)
 
 ## Scoring system and game exit
@@ -34,6 +35,7 @@ https://github.com/Simeon-2022/Rock-Paper-Scissors-game/blob/main/RockPaperSciss
 ![image](https://github.com/Simeon-2022/Rock-Paper-Scissors-game/assets/114140968/cd6bed8d-eb58-4ef3-a251-827faff56c1b)
 - The final result is printed out and a prompt for another round:
 
-![image](https://github.com/Simeon-2022/Rock-Paper-Scissors-game/assets/114140968/7e7c037e-871a-48e5-9c2b-d6f9785583b7)
+![image](https://github.com/Simeon-2022/Rock-Paper-Scissors-game/assets/114140968/c69788ea-9589-40f5-a8c7-bc5884802d6d)
+
 
 
