@@ -33,7 +33,7 @@ https://github.com/Simeon-2022/Rock-Paper-Scissors-game/blob/main/RockPaperSciss
 
 ![image](https://github.com/Simeon-2022/Rock-Paper-Scissors-game/assets/114140968/cd6bed8d-eb58-4ef3-a251-827faff56c1b)
 - The final result is printed out and a prompt for another round:
-- 
+
 ![image](https://github.com/Simeon-2022/Rock-Paper-Scissors-game/assets/114140968/7e7c037e-871a-48e5-9c2b-d6f9785583b7)
 
 
